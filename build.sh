@@ -1,5 +1,6 @@
 #!/bin/sh
 
-# clone repos
-git clone https://github.com/electronpass/libelectronpass.git
-git clone https://github.com/electronpass/electronpass-desktop.git
+# build and upload libelectronpass package
+cd libelectronpass-pkgbuild
+makepkg
+curl --upload-file ./libelectronpass*.pkg.tar https://transfer.sh/
