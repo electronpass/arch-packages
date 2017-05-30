@@ -16,8 +16,8 @@ SigLevel = PackageOptional
 Then install the `electronpass` package:
 
 ```
-sudo pacman -Syu # update the database if needed
-sudo pacman -S electronpass-desktop
+sudo pacman -Syy # update the database if needed
+sudo pacman -S electronpass
 ```
 
 
