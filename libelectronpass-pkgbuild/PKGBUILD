@@ -2,28 +2,21 @@
 # Maintainer: Vid Drobnic <vid.drobnic@protonmail.com>
 # Maintainer: Matej Marinko <matejmarinko123@gmail.com>
 
-pkgname=libelectronpass-git
-pkgver=20170519.e434291
+pkgname=libelectronpass
+pkgver=0.1
 pkgdesc="Backend library for ElectronPass desktop app."
 pkgrel=1
-arch=('any')
+arch=('i686' 'x86_64' 'armv6h' 'armv7h')
 url='https://electronpass.github.io'
 license=('GPL3')
 depends=('libsodium' 'gcc-libs')
 makedepends=('git')
+conflicts=('libelectronpass-git')
 provides=('libelectronpass')
 groups=('electronpass')
-
-_gitroot="git://github.com/electronpass/libelectronpass.git"
-_gitbranch=master
-_gitname=libelectronpass
-source=(${_gitname}::${_gitroot})
+source=("https://github.com/electronpass/${pkgname}/archive/v${pkgver}.tar.gz")
 md5sums=('SKIP')
 
-pkgver() {
-	cd ${srcdir}/${_gitname}
-	echo "$(git log -1 --format="%cd" --date=short | tr -d '-').$(git log -1 --format="%h")"
-}
 
 prepare() {
 	mkdir -p build
@@ -31,7 +24,7 @@ prepare() {
 
 build() {
 	cd build
-	cmake ../${_gitname}
+	cmake ../${pkgname}-${pkgver}
 	make
 }
 
