@@ -3,7 +3,7 @@
 # build libelectronpass package
 cd libelectronpass-pkgbuild
 makepkg
-cd ..
+cd
 
 # install libelectronpass
 sudo pacman -U --noconfirm libelectronpass-pkgbuild/*.pkg.tar
@@ -11,7 +11,7 @@ sudo pacman -U --noconfirm libelectronpass-pkgbuild/*.pkg.tar
 # build electronpass-desktop package
 cd electronpass-desktop-pkgbuild
 makepkg
-cd ..
+cd
 
 # create arch database files
 repo-add electronpass-current.db.tar.gz libelectronpass-pkgbuild/*.pkg.tar electronpass-desktop-pkgbuild/*.pkg.tar
