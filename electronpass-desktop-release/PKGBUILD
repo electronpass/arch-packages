@@ -2,14 +2,14 @@
 # Maintainer: Vid Drobnic <vid.drobnic@protonmail.com>
 # Maintainer: Matej Marinko <matejmarinko123@gmail.com>
 
-pkgname=electronpass-desktop
+pkgname=electronpass-desktop-release
 pkgver=0.0.1
 pkgrel=1
-pkgdesc="ElectronPass desktop app."
+pkgdesc="ElectronPass desktop app release package."
 arch=('x86_64')
 url="http://electronpass.github.io"
 license=('GPL')
-depends=('qt5-base' 'qt5-declarative' 'qt5-quickcontrols' 'qt5-quickcontrols2' 'qt5-tools')
+depends=('qt5-base' 'qt5-declarative' 'qt5-quickcontrols' 'qt5-quickcontrols2' 'qt5-tools' 'libelectronpass')
 makedepends=('git' 'extra-cmake-modules')
 provides=('electronpass-desktop')
 
