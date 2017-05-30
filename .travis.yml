@@ -4,6 +4,7 @@ arch:
   packages:
     # pacman packages
     - libsodium
+    - cmake
   script:
     - "./build.sh"
 
