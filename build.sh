@@ -3,9 +3,7 @@
 # build libelectronpass package
 cd libelectronpass-pkgbuild
 makepkg
-ls
 cd ..
-ls
 
 # install libelectronpass
 sudo pacman -U --noconfirm libelectronpass-pkgbuild/*.pkg.tar.xz
