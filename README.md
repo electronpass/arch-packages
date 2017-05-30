@@ -1,7 +1,7 @@
 # Arch Packages
 [![Build Status](https://travis-ci.org/electronpass/arch-packages.svg?branch=master)](https://travis-ci.org/electronpass/arch-packages)
 
-Arch package build system for libelectronpass and electronpass-desktop.
+Arch package build system for [libelectronpass](https://github.com/electronpass/libelectronpass/) and [electronpass-desktop](https://github.com/electronpass/electronpass-desktop/).
 
 Packages get built on [Travis CI](https://travis-ci.org/electronpass/arch-packages) and are uploaded to [transfer.sh](https://transfer.sh). All the releases are then published on [GitHub Releases](https://github.com/electronpass/arch-packages/releases) page under `current` tag and available for manual download or via pacman.
 
