@@ -13,9 +13,12 @@ Server = https://github.com/electronpass/arch-packages/releases/download/current
 SigLevel = PackageOptional
 ```
 
-Then install the `electronpass-desktop` package:
+Then install the `electronpass` package:
 
-`sudo pacman -S electronpass-desktop`
+```
+sudo pacman -Syu # update the database if needed
+sudo pacman -S electronpass-desktop
+```
 
 
 The repository was set up following this brilliant [article](https://fusion809.github.io/how-to-create-archlinux-repository/) on Arch packages.
