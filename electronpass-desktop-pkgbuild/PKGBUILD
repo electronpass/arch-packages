@@ -6,7 +6,7 @@
 # Maintainer: Vid Drobnic <vid.drobnic@protonmail.com>
 # Maintainer: Matej Marinko <matejmarinko123@gmail.com>
 
-pkgname=electronpass
+pkgname=electronpass-desktop
 pkgver=0.1
 pkgdesc="ElectronPass desktop app release package."
 pkgrel=1
