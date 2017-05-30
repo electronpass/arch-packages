@@ -1,0 +1,39 @@
+# Maintainer: Ziga Patacko Koderman <ziga.patacko@protonmail.com>
+# Maintainer: Vid Drobnic <vid.drobnic@protonmail.com>
+# Maintainer: Matej Marinko <matejmarinko123@gmail.com>
+
+pkgname=electronpass-desktop-release
+pkgver=0.0.1
+pkgrel=1
+pkgdesc="ElectronPass desktop app release package."
+arch=('x86_64')
+url="http://electronpass.github.io"
+license=('GPL')
+depends=('qt5-base' 'qt5-declarative' 'qt5-quickcontrols' 'qt5-quickcontrols2' 'qt5-tools' 'libelectronpass')
+makedepends=('git' 'extra-cmake-modules')
+provides=('electronpass-desktop')
+
+_gitroot="git://github.com/electronpass/electronpass-desktop.git"
+_gitbranch=master
+_gitname=electronpass-desktop
+source=(${_gitname}::${_gitroot})
+md5sums=('SKIP')
+
+prepare() {
+  cd -
+  cd ..
+  mkdir -p build
+}
+
+build() {
+  cd -
+  cd build
+  cmake ..
+  make
+}
+
+package() {
+  cd -
+  cd build
+  make DESTDIR="$pkgdir/" install
+}
