@@ -2,10 +2,6 @@
 # Maintainer: Vid Drobnic <vid.drobnic@protonmail.com>
 # Maintainer: Matej Marinko <matejmarinko123@gmail.com>
 
-# Maintainer: Ziga Patacko Koderman <ziga.patacko@protonmail.com>
-# Maintainer: Vid Drobnic <vid.drobnic@protonmail.com>
-# Maintainer: Matej Marinko <matejmarinko123@gmail.com>
-
 pkgname=electronpass-desktop
 pkgver=0.1.1
 pkgdesc="ElectronPass desktop app release package."
