@@ -14,7 +14,8 @@ makedepends=('git' 'extra-cmake-modules')
 conflicts=('electronpass-desktop-git')
 provides=('electronpass-desktop')
 groups=('electronpass')
-source=("https://github.com/electronpass/${pkgname}/archive/v${pkgver}.tar.gz")
+#source=("https://github.com/electronpass/${pkgname}/archive/v${pkgver}.tar.gz")
+source=("https://github.com/electronpass/electronpass-desktop/archive/continuous.tar.gz")
 md5sums=('SKIP')
 
 
