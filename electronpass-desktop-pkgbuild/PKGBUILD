@@ -7,7 +7,7 @@
 # Maintainer: Matej Marinko <matejmarinko123@gmail.com>
 
 pkgname=electronpass-desktop
-pkgver=0.1
+pkgver=0.1.1
 pkgdesc="ElectronPass desktop app release package."
 pkgrel=1
 arch=('i686' 'x86_64' 'armv6h' 'armv7h')
@@ -28,6 +28,9 @@ prepare() {
   # refer to https://github.com/electronpass/credentials for more information
   git clone https://github.com/electronpass/credentials.git
   python3 credentials/configure.py credentials/keys.json.asc ${keys_encryption_password} credentials/desktop.tpl ${pkgname}-${pkgver}/app/sync/keys.txt
+	cd ${pkgname}-${pkgver}
+	bash install-dependencies.sh
+	cd ..
 }
 
 build() {
