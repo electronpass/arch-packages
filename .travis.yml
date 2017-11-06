@@ -12,6 +12,7 @@ arch:
     - qt5-quickcontrols2
     - qt5-tools
     - python
+    - wget
   script:
     - "./build.sh"
 
