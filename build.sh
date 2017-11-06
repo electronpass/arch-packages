@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# install wget
+pacman -S wget
+
 # build electronpass-desktop package
 cd electronpass-desktop-pkgbuild
 makepkg
