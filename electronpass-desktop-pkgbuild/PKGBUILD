@@ -10,8 +10,7 @@ arch=('i686' 'x86_64' 'armv6h' 'armv7h')
 url="http://electronpass.github.io"
 license=('GPL3')
 depends=('qt5-base' 'qt5-declarative' 'qt5-quickcontrols' 'qt5-quickcontrols2' 'qt5-tools')
-makedepends=('git' 'extra-cmake-modules' 'wget')
-conflicts=('electronpass-desktop-git')
+makedepends=('git' 'wget')
 provides=('electronpass-desktop')
 groups=('electronpass')
 #source=("https://github.com/electronpass/${pkgname}/archive/v${pkgver}.tar.gz")
@@ -25,7 +24,8 @@ prepare() {
   # refer to https://github.com/electronpass/credentials for more information
   git clone https://github.com/electronpass/credentials.git
   # python3 credentials/configure.py credentials/keys.json.asc ${keys_encryption_password} credentials/desktop.tpl ${pkgname}-${pkgver}/app/sync/keys.txt
-	python3 credentials/configure.py credentials/keys.json.asc ${keys_encryption_password} credentials/desktop.tpl ${pkgname}-continuous/app/sync/keys.txt
+	mv ${pkgname}-continuous/app/sync/keys.default.hpp ${pkgname}-continuous/app/sync/keys.hpp
+	python3 credentials/configure.py credentials/keys.json.asc ${keys_encryption_password} ${pkgname}-continuous/app/sync/keys.hpp
 	# cd ${pkgname}-${pkgver}
 	cd ${pkgname}-continuous
 	bash install-dependencies.sh
@@ -34,12 +34,11 @@ prepare() {
 
 build() {
 	cd build
-	# cmake ../${pkgname}-${pkgver}
-	cmake ../${pkgname}-continuous
-	make
+	qmake PREFIX="${pkgdir}" ../${pkgname}-continuous/electronpass.pro
+	make -j4
 }
 
 package() {
 	cd build
-	make DESTDIR="${pkgdir}" install
+	make install
 }
