@@ -8,6 +8,7 @@ arch:
     - qt5-quickcontrols
     - qt5-quickcontrols2
     - qt5-tools
+    - cmake
     - python
     - wget
   script:
